@@ -8,4 +8,4 @@ Websites:
 * [Bahlai's Guide for Reproducible Quantitative Methods courses](https://cbahlai.github.io/rqm-template/)
 * [NEON Learning Hub](https://www.neonscience.org/resources/learning-hub)
 * [QUBES FMN site](https://qubeshub.org/community/fmns)
-* see Catherine's course on D2L (hopefully)
+* see Catherine's course on D2L
