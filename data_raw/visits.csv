@@ -1,0 +1,6 @@
+visit_id,dataset_id,habitat,date,min_rainfall,max_rainfall,min_temperature,max_temperature,min_elevation,max_elevation,collection_method,latitude,longitude,meta,dataset_name
+41,51,Primary and Secondary Forest,1997-09-11,NA,NA,NA,NA,650,750,dissection,10.983,-85.433,"Srivastava DS 2006 Habitat structure, trophic structure and ecosystem function: interactive effects in a bromeliad-insect community Oecologia 149 493-504",Pitilla1997
+46,56,Primary - 2m above ground,2000-10-12,NA,NA,NA,NA,650,750,pipet,10.983,-85.433,"Srivastava, Melnychuk, Ngai 2004",Pitilla2000
+51,56,Primary - Canopy,2000-10-12,NA,NA,NA,NA,650,750,dissection,10.983,-85.433,"Srivastava, Melnychuk, Ngai 2004",Pitilla2000
+56,61,Secondary,2002-10-18,NA,NA,NA,NA,650,750,dissection,10.983,-85.433,"Srivastava, Melnychuk, Ngai 2004",Pitilla2002
+86,71,Secondary Forest and Pasture,2010-11-06,NA,NA,NA,NA,651,751,dissection,10.983,-85.433,NA,Pitilla2010
