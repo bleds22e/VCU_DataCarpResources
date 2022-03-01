@@ -1,7 +1,7 @@
 # VCU_DataCarpResources
 Repo for housing resources for the undergraduate data carpentry course
 
-Course Websites:
+## Course Websites:
 
 * [Kerkoff's EcoInformatics Course](https://globalecologybiogeography.github.io/Ecoinformatics/)
 * [Data Carpentry R for Ecologists lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
@@ -17,16 +17,16 @@ Course Websites:
 * [QUBES FMN site](https://qubeshub.org/community/fmns)
 * see Catherine's course on D2L
 
-Books which teach R:
+## Books which teach R:
 * [R for Data Science by Wickham & Grolemund](https://r4ds.had.co.nz/)
 
-Other:
+## Videos Teaching R:
 * [Kelsey Gonzalez's YouTube channel](https://www.youtube.com/playlist?list=PL6FsZxVq54ERrlMRNE5aq2qUFH042fbuM)
 
-Pedagogy Resources:
+## Pedagogy Resources:
 * [Martin Monkman's R Resource Compendium](https://bookdown.org/martin_monkman/DataScienceResources_book/data-science-pedagogy.html)
 
-Possible Data Sources:
+## Possible Data Sources:
 * [NEON](https://www.neonscience.org/data-samples)
 * [LTER and GLEON data (via Environmental Data Initiative Portal)](https://portal.edirepository.org/nis/advancedSearch.jsp)
 * [`rdataretriever`](https://github.com/ropensci/rdataretriever)
