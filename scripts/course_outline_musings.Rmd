@@ -20,6 +20,9 @@ This is a word-vomit-style document to contain information and thoughts about co
 * Differences between R and RStudio; intro to RStudio
 * R Basics: object-oriented, assignment, vectors, subsetting
 * Working with data in R: intro to data frames/tibbles
+* functions and how to use them
+* help files and how to read them
+* how to de-bug code
 
 ### Intro to `tidyverse`
 * What is the `tidyverse`?
@@ -30,12 +33,18 @@ This is a word-vomit-style document to contain information and thoughts about co
 * Separate/unite
 * Working with strings in stringr
 * Pivot wider/pivot longer
+* `lubridate`
 
 ### Data Visualization
 * data viz best practices
 * which viz go with which data types
 * colors, effectively and efficiently conveying information
 * intro to ggplot
+
+### Iteration
+* writing your own functions
+* for loops
+* `purrr`? I don't understand `purrr` very well, tbh
 
 ## Misc. Topics 
 * RMarkdown
