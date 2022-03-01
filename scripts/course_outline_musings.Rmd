@@ -1,6 +1,6 @@
 ---
 title: "Course Outline Musings"
-output: html_document
+output: github_document
 ---
 
 This is a word-vomit-style document to contain information and thoughts about course development.
@@ -9,11 +9,13 @@ This is a word-vomit-style document to contain information and thoughts about co
 
 ### Intro to Data Science
 * "Let them eat cake" style demo at the beginning of class (see Ethan's script)?
+* Reproducibility and open science
 * Data management best practices
 * Spreadsheet best practices (flows well into tidy data)
 * Long vs. wide data styles
 * Interacting with files on the computer (turns out my undergrads DO NOT know how to download files from the internet and save them to a specific location on their computer, which is mind-blowing to me)
 * File paths (imperative)
+* Metadata
 
 ### Intro to R/RStudio
 * RProjects
@@ -25,14 +27,15 @@ This is a word-vomit-style document to contain information and thoughts about co
 * how to de-bug code
 
 ### Intro to `tidyverse`
-* What is the `tidyverse`?
-* Why use the `tidyverse`?
+* What is the `tidyverse` and why use it?
 * Intro to pipes 
-* Filter, select
-* Mutate, group_by, summarize
-* Separate/unite
-* Working with strings in stringr
-* Pivot wider/pivot longer
+* `dplyr` 
+  * Filter, select
+  * Mutate, group_by, summarize
+* `tidyr`
+  * Separate/unite
+  * Pivot wider/pivot longer
+* `stringr`
 * `lubridate`
 
 ### Data Visualization
