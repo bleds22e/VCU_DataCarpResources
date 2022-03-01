@@ -9,6 +9,9 @@ Websites:
 * [Simona's EcoRepSci course (graduate)](https://ecorepsci.github.io/reproducible-science/)
 * [Jeff Oliver's learn-r page](https://jcoliver.github.io/learn-r/)
 * [Jarrett Byrnes's Intro to Data Science for Biologists course](https://biol355.github.io/)
+  * includes links to lecture slides, lectures, class pre-readings, etc.
+  * [lecture playlist](https://www.youtube.com/playlist?list=PLZRMqMK8aRmL9UqEsi_uT-JHkloZEwHUn)
+  * most readings from Wickham and Grolemun's [R for Data Science](https://r4ds.had.co.nz/)
 * [Dan McGlinn's Applied Quantitative Methods course](http://dmcglinn.github.io/quant_methods/)
 * [NEON Learning Hub](https://www.neonscience.org/resources/learning-hub)
 * [QUBES FMN site](https://qubeshub.org/community/fmns)
@@ -16,3 +19,14 @@ Websites:
 
 Pedagogy Resources:
 * [Martin Monkman's R Resource Compendium](https://bookdown.org/martin_monkman/DataScienceResources_book/data-science-pedagogy.html)
+
+Possible Data Sources:
+* [NEON](https://www.neonscience.org/data-samples)
+* [LTER and GLEON data (via Environmental Data Initiative Portal)](https://portal.edirepository.org/nis/advancedSearch.jsp)
+* [`rdataretriever`](https://github.com/ropensci/rdataretriever)
+* [`portalr`](https://weecology.github.io/portalr/)
+* [Ecological Data Wiki](https://ecologicaldata.org/)
+* [DataONE](https://old.dataone.org/data)
+* Large public datasets listed [here](https://github.com/awesomedata/awesome-public-datasets#biology), including agriculture, biology, climate + weather, earth science, energy, etc.)
+* [VertNet](http://vertnet.org/)
+* [`popler`](https://docs.ropensci.org/popler/)
