@@ -4,7 +4,10 @@ Repo for housing resources for the undergraduate data carpentry course
 ## Course Websites:
 
 * [Kerkoff's EcoInformatics Course](https://globalecologybiogeography.github.io/Ecoinformatics/)
-* [Data Carpentry R for Ecologists lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
+* The Carpentries
+  * [Data Carpentry R for Ecologists lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
+  * [Software Carpentry: R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/guide/)
+  * [Software Carpentry: Programming with R](http://swcarpentry.github.io/r-novice-inflammation/)
 * [Bahlai's Guide for Reproducible Quantitative Methods courses](https://cbahlai.github.io/rqm-template/)
 * [Simona's EcoRepSci course (graduate)](https://ecorepsci.github.io/reproducible-science/)
 * [Jeff Oliver's learn-r page](https://jcoliver.github.io/learn-r/)
@@ -16,6 +19,7 @@ Repo for housing resources for the undergraduate data carpentry course
 * [NEON Learning Hub](https://www.neonscience.org/resources/learning-hub)
 * [QUBES FMN site](https://qubeshub.org/community/fmns)
 * see Catherine's course on D2L
+  * [YouTube channel](https://www.youtube.com/channel/UCAxw75f8aIKi-ciS5PM_qmg/videos) for the course
 
 ## Books which teach R:
 * [R for Data Science by Wickham & Grolemund](https://r4ds.had.co.nz/)
