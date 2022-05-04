@@ -46,3 +46,4 @@ A document with some overview thoughts about the course structure can be found [
 * Large public datasets listed [here](https://github.com/awesomedata/awesome-public-datasets#biology), including agriculture, biology, climate + weather, earth science, energy, etc.)
 * [VertNet](http://vertnet.org/)
 * [`popler`](https://docs.ropensci.org/popler/)
+* [`lterdatasampler`](https://lter.github.io/lterdatasampler/)
