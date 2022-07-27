@@ -18,6 +18,8 @@ Citations for many of the concepts are included below.
 -   Real data
 -   Team-based learning techniques
 -   Assignment and assessments prepare students for final project
+-   “I do, we do, you do”
+-   Constructivism
 
 ## Data Science & Pedagogy
 
@@ -28,6 +30,8 @@ Citations for many of the concepts are included below.
     then data import
 -   Let them eat cake…first (early win)
 -   Tidyverse to maximize readability
+-   Domain-specific learning (building upon the scaffolding)
+-   Expected output is included
 
 # Annotations
 
@@ -116,3 +120,37 @@ students to “Pick a dataset, any dataset, and do something with it.””
 ([Çetinkaya-Rundel and Ellison, 2021,
 p. 24](zotero://select/groups/4541885/items/7V3GCIQK))
 ([pdf](zotero://open-pdf/groups/4541885/items/7Z5XJLCJ?page=10&annotation=HXI6RGFQ))
+
+“The course is built around the “I do, we do, you do” approach to
+teaching where first the instructor demonstrates how to do something,
+then the students work on an example with the instructor present to help
+and answer questions, and finally the students work on additional
+examples independently. This approach is based on explicit instruction
+principles, which leverage the benefits of active-learning without
+leaving students who are less comfortable with the material feeling lost
+(Archer & Hughes, 2010; Rosenshine, 1987).” ([White et al., 2022,
+p. 2](zotero://select/groups/4541885/items/TRFBCJPS))
+([pdf](zotero://open-pdf/groups/4541885/items/7ADHIBNM?page=2&annotation=Q9MN73U3))
+
+“To accomplish this the course uses a number of real ecological datasets
+and the coding demonstrations and exercises focus on common tasks in the
+analysis of biological data.” ([White et al., 2022,
+p. 2](zotero://select/groups/4541885/items/TRFBCJPS))
+([pdf](zotero://open-pdf/groups/4541885/items/7ADHIBNM?page=2&annotation=GJ9BABHD))
+
+“In addition, some learning theories, such as Constructivism, suggest
+that students learn by incorporating new ideas into their existing
+knowledge (Bada & Olusegun, 2015), thus general computing courses could
+also make learning inherently more difficult for students.” ([White et
+al., 2022, p. 2](zotero://select/groups/4541885/items/TRFBCJPS))
+([pdf](zotero://open-pdf/groups/4541885/items/7ADHIBNM?page=2&annotation=TJB2A3NM))
+
+“the expected output for each exercise is included on the website. This
+allows the learner to self-evaluate and troubleshoot their solution to
+the exercise, while still keeping the code solutions private for use in
+grading in traditional classroom settings. This is also beneficial to
+students using this material in traditional courses because it helps
+remove any uncertainty about exactly what each exercise expects the
+learner to do.” ([White et al., 2022,
+p. 3](zotero://select/groups/4541885/items/TRFBCJPS))
+([pdf](zotero://open-pdf/groups/4541885/items/7ADHIBNM?page=3&annotation=VQR9G3TG))
