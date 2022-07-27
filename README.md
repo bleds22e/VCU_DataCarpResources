@@ -2,12 +2,14 @@
 Repo for housing resources for the undergraduate data carpentry course via VCU
 
 ## General Course Thoughts
-A document with some overview thoughts about the course structure can be found [here](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/scripts/course_outline_musings.md)
+A document with some overview thoughts about the course structure can be found [here](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/course_development/course_outline_musings.md)
 
 ## Resource Links
 
 ### Course Websites
 
+* Ethan's [Data Carpentry for Biologists](https://datacarpentry.org/semester-biology/) semester course
+  * [lecture playlist](https://www.youtube.com/playlist?list=PLD8eCxFKntVH5EJmTBaZXWaU8cM_T9Lfl)
 * [Kerkoff's EcoInformatics Course](https://globalecologybiogeography.github.io/Ecoinformatics/)
 * The Carpentries
   * [Data Carpentry R for Ecologists lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
@@ -33,7 +35,9 @@ A document with some overview thoughts about the course structure can be found [
 * [R for Data Science by Wickham & Grolemund](https://r4ds.had.co.nz/)
 
 ### Videos Teaching R
-* [Kelsey Gonzalez's YouTube channel](https://www.youtube.com/playlist?list=PL6FsZxVq54ERrlMRNE5aq2qUFH042fbuM)
+* Kelsey Gonzalez's [YouTube channel](https://www.youtube.com/playlist?list=PL6FsZxVq54ERrlMRNE5aq2qUFH042fbuM)
+* Ethan White's [Data Carpentry for Biologists playlist](https://www.youtube.com/playlist?list=PLD8eCxFKntVH5EJmTBaZXWaU8cM_T9Lfl)
+* Jarrett Byrnes's [Intro Data Science for Biologists playlist](https://www.youtube.com/playlist?list=PLZRMqMK8aRmL9UqEsi_uT-JHkloZEwHUn)
 
 ### Pedagogy Resources
 * [Martin Monkman's R Resource Compendium](https://bookdown.org/martin_monkman/DataScienceResources_book/data-science-pedagogy.html)
