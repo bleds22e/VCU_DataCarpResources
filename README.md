@@ -25,6 +25,9 @@ A document with some overview thoughts about the course structure can be found [
 * [QUBES FMN site](https://qubeshub.org/community/fmns)
 * see Catherine's course on D2L
   * [YouTube channel](https://www.youtube.com/channel/UCAxw75f8aIKi-ciS5PM_qmg/videos) for the course
+* [Data Science in a Box](https://datasciencebox.org/)
+  * [GitHub repo for the course](https://github.com/rstudio-education/datascience-box)
+
 
 ### Books which teach R
 * [R for Data Science by Wickham & Grolemund](https://r4ds.had.co.nz/)
@@ -34,6 +37,7 @@ A document with some overview thoughts about the course structure can be found [
 
 ### Pedagogy Resources
 * [Martin Monkman's R Resource Compendium](https://bookdown.org/martin_monkman/DataScienceResources_book/data-science-pedagogy.html)
+* Data Science in a Box (see above) [Pedagogy Tips](https://datasciencebox.org/04-pedagogy.html)
 * see "VCU_DataScience" group library on Zotero
 
 ### Possible Data Sources
