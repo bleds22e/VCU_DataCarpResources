@@ -15,6 +15,8 @@ Ellen Bledsoe
 -   The Carpentries
     -   [Data Carpentry R for Ecologists
         lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
+    -   [Data Carpentry R for Ecologists
+        Rewrite](https://www.michaelc-m.com/Rewrite-R-ecology-lesson/)
     -   [Software Carpentry: R for Reproducible Scientific
         Analysis](https://swcarpentry.github.io/r-novice-gapminder/guide/)
     -   [Software Carpentry: Programming with

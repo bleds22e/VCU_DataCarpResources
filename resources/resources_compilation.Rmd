@@ -12,6 +12,7 @@ output: github_document
 * [Kerkoff's EcoInformatics Course](https://globalecologybiogeography.github.io/Ecoinformatics/)
 * The Carpentries
   * [Data Carpentry R for Ecologists lesson](https://datacarpentry.org/R-ecology-lesson/index.html)
+  * [Data Carpentry R for Ecologists Rewrite](https://www.michaelc-m.com/Rewrite-R-ecology-lesson/)
   * [Software Carpentry: R for Reproducible Scientific Analysis](https://swcarpentry.github.io/r-novice-gapminder/guide/)
   * [Software Carpentry: Programming with R](http://swcarpentry.github.io/r-novice-inflammation/)
 * [Bahlai's Guide for Reproducible Quantitative Methods courses](https://cbahlai.github.io/rqm-template/)
