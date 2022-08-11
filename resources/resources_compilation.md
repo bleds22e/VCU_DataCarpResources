@@ -1,7 +1,7 @@
 Resources Compilation
 ================
 Ellen Bledsoe
-2022-08-02
+2022-08-10
 
 ### Course Websites
 
@@ -46,6 +46,8 @@ Ellen Bledsoe
 -   [Data Science in a Box](https://datasciencebox.org/)
     -   [GitHub repo for the
         course](https://github.com/rstudio-education/datascience-box)
+-   Carl Boettiger’s [Data Science for Global Climate Change
+    course](https://espm-157.carlboettiger.info/)
 
 ### Books which teach R
 
@@ -82,6 +84,27 @@ Ellen Bledsoe
 -   [VertNet](http://vertnet.org/)
 -   Living Data Project data (location?)
 -   Berkeley Earth [climate data](http://berkeleyearth.org/data/)
+-   Kaggle datasets
+    -   [Earth surface temperature
+        data](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data)
+    -   [Rain in
+        Australia](https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package)
+    -   [Biological invasions in the
+        US](https://www.kaggle.com/datasets/lazaro97/biological-invasions)
+    -   [Paleobiology
+        Database](https://www.kaggle.com/datasets/apartmentguru/dino-crisis)
+    -   [Immunobiologicals by Age and Region in
+        Brazil](https://www.kaggle.com/datasets/crisleyoliveira/application-of-immunobiologicals-in-brazil)
+    -   [Duke Lemur Center
+        Data](https://www.kaggle.com/code/grrrck/lemurs-simplified)
+    -   [Hourly Surface Weather in
+        Brazil](https://www.kaggle.com/datasets/PROPPG-PPG/hourly-weather-surface-brazil-southeast-region)
+    -   [London
+        Air](https://www.londonair.org.uk/london/asp/datadownload.asp),
+        especially for [data
+        cleaning](https://makingnoiseandhearingthings.com/2018/04/19/datasets-for-data-cleaning-practice/)
+    -   [Datasets](https://github.com/datacarpentry/semester-biology/tree/main/data)
+        from the Weecology semester DC course
 
 #### Data Packages
 
@@ -91,5 +114,9 @@ Ellen Bledsoe
 -   [`portalr`](https://weecology.github.io/portalr/)
     -   [`ratdat`](https://github.com/weecology/ratdat), the Portal
         teaching data set
+    -   specific `ratdat` datasets for cleaning found
+        [here](https://www.michaelc-m.com/Rewrite-R-ecology-lesson/)
 -   [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/)
--   [`tidybiology`](https://github.com/matthewhirschey/tidybiology)
+-   [`traitdata`](https://rdrr.io/github/RS-eco/traitdata/)
+-   [`fortedata`](https://fortexperiment.github.io/fortedata/)
+-   [`usdanutrients`](https://github.com/hadley/usdanutrients)
