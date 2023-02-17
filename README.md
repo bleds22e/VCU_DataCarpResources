@@ -3,7 +3,10 @@ Repo for housing resources for the undergraduate data carpentry course via VCU
 
 ## Course Development folder
 
-### General Course Thoughts
+### WIP Syllabus
+A [.Rmd file](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/course_development/Syllabus_WIP.md) with a Work-in-Progress Syllabus document for the course.
+
+### Course Outline & General Musings
 A [document](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/course_development/course_outline_musings.md) with some overview thoughts about the course structure.
 
 ### Reading Concepts
