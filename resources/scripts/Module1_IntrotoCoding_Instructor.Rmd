@@ -1,0 +1,306 @@
+---
+title: "Introduction to Coding in R"
+author: "EKB"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document: default
+---
+
+# Introduction to R and RStudio
+
+### Student Learning Outcomes
+
+-   Students will be able to explain the benefit of each of the four main panels in RStudio
+-   Students will be able to do the following in the R languages:
+    -   perform mathematics
+    -   assign objects
+    -   use functions
+    -   explore and describe vectors (1D) and data frames (2D data)
+
+## RStudio Cloud Tour
+
+Let's first explore what each of the panels in RStudio do.
+
+1.  *Source* (upper left): This is where documents which have data or code in them are opened. You can save all the code you type here for future (re)use, which is a big reason coding in R is reproducible.
+2.  *Console* (bottom left): This is where code from the source is "run" and you see the outputs. You can also execute lines of code which you type into the console, but they will not be saved. You can think of this section as where RStudio really interfaces with R--it is where R actually evaluates code within RStudio.
+3.  *Environment* (upper right): This panel becomes more helpful as you get familiar with R and RStudio. It keeps track of data objects and other items you have created and gives a bit of information about them.
+4.  *Files/Help/etc.* (bottom right): This panel is (clearly) very multifaceted. The Files tab lets you see all the files in your current workspace. For us, the Help tab is probably what we will use the most. This is where we can search the R documentation for information about functions we use.
+
+# Basics of Coding in R
+
+How do you "run" code? Running or executing code means that you are sending a line of code to the console for R to interpret it.
+
+In the source, there are a few different ways to run code.
+
+-   Sometimes you want to run only one line of code at a time. You can do this by putting your cursor on the line you want to run and either hitting the "Run" button in the upper right-hand corner of the source panel or holding down `Ctrl` + `Enter` (`Cmd` + `Enter` on Macs). If you want to run a couple lines of code, you can highlight them and do the same thing
+-   If you want to run an entire code chunk (see below), you can click on the green arrow on the right side of the code chunk.
+
+In the console, you hit `Enter`.
+
+## Using R as a calculator
+
+For example:
+
+```{r}
+3 + 5
+
+15 / 5
+
+4^2
+```
+
+### Let's practice in the console, too.
+
+You can do basic math in the console. The console only understands R code, so we don't need to use the `{r}` notation; we can type numbers and mathematical symbols. Try multiplying 5 and 3 (hint: \* means multiply) in the console.
+
+## Assigning Objects
+
+Assignments are really key to almost everything we do in R. This is how we create permanence in R. Anything can be saved to an object, and we do this with the assignment operator, `<-`.
+
+The short-cut for `<-` is `Alt + -` (or `Option + -` on a Mac). We will be typing this *a lot*.
+
+```{r}
+mass <- 47.5            
+age <- 122
+```
+
+We can also perform mathematical functions on numeric objects.
+
+```{r}
+# we can add comments to our code by using the # sign
+# R doesn't read anything past a #, so you can either put one at the beginning of a whole line or after some code
+
+mass <- mass * 2        # multiply
+age <- age - 20         # subtract
+mass_index <- mass/age  # divide
+```
+
+## Functions
+
+Functions are pre-written bits of codes that perform specific tasks for us.
+
+Functions are always followed by parentheses. Anything you type into the parentheses are called arguments. Arguments allow us to give the function additional information about how we want it to perform its task.
+
+```{r}
+weight_kg <- sqrt(10) # square root 
+
+round(weight_kg) # rounding 
+round(weight_kg, digits = 2) # round to 2 digits past 0
+```
+
+To get more information about a function, use the help function.
+
+```{r}
+# these two lines of code do the same thing
+help(mean) 
+?mean
+```
+
+## Vectors
+
+Vectors are the most common and basic data type in R. They make up most of the other data types we will work with in R. They are composed of series of values, which can either be numbers or characters.
+
+We use the `c()` function (stands for concatenate) to create a vector.
+
+```{r}
+# Let's create a vector of animal weights (numeric)
+weight_g <- c(50, 60, 65, 82) 
+weight_g
+
+# A vector can also contain character strings (character)
+animals <- c("mouse", "rat", "dog") 
+animals
+```
+
+There are many functions we can use to look at vectors and learn more about them.
+
+```{r}
+# how many elements
+length(weight_g) 
+length(animals)
+
+# type of data we are working with
+class(weight_g) 
+class(animals)
+
+# structure of an object
+str(weight_g) 
+str(animals)
+```
+
+Vectors can only be one data type. Let's experiment with that.
+
+```{r}
+test_vec <- c(weight_g, animals) 
+test_vec 
+class(test_vec) # coerced everything into character (don't know how to make words numeric)
+```
+
+### Sub-setting by Index
+
+Sometimes we want to pull out and work with specific values from a vector. This is called sub-setting (taking a smaller set of the original).
+
+One way to do this is by an "index," meaning the position of the value or object in the vector. To do this, we use square brackets and a number to indicate the position.
+
+```{r}
+weight_g[2] 
+weight_g[c(2,4)] 
+weight_g[c(1:4)]
+```
+
+### Conditional subsetting
+
+Another way in which we can subset data is through conditions. The vector will only return data which meets the conditions we set.
+
+```{r}
+weight_g[weight_g > 55] 
+animals[animals == "rat"]
+```
+
+### Group Challenge
+
+Let's practice! Write a few lines of code that do the following:
+
+-   create a vector with numbers from 6 to 1, in reverse order
+-   assign the vector to an object named `vec`
+-   using the index method, subset `vec` to include the last 3 numbers (should include 3, 2, 1)
+-   find the sum of the numbers (hint: use the `sum()` function)
+
+```{r}
+# the answer you should get out is 6
+vec <- c(6, 5, 4, 3, 2, 1)
+vec
+
+vec <- vec[4:6]
+vec
+
+sum(vec)
+```
+
+## Working with Data Frames
+
+Most of the data we work with is two-dimensional, i.e., it has columns and rows. Its structure resembles a spreadsheet.
+
+-   **rows** go side-to-side
+-   **columns** go up-and-down
+
+R is really good with these types of data.
+
+Data frames are made up of multiple vectors. Each vector becomes a column.
+
+To explore data frames, we are going to use a package called `palmerpenguins`.
+
+A *package* is a bunch of pre-written code, often in the form of functions, which we can bring into R and use. In this case, we are using a data package, which loads data into R that we can use. It is real data from penguins in Antarctica! You can learn more about the `palmerpenguins` package and data [here](https://allisonhorst.github.io/palmerpenguins/).
+
+```{r}
+# code for installing a package from the internet for future reference
+# install.packages("palmerpenguins")
+# to run the line of code above, remove the # symbol
+```
+
+I've already set it up where RStudio Cloud has `palmerpenguins` installed, AKA downloaded from the internet. We now need to tell RStudio that we want to use it. We will need to do that every time we open RStudio and want to use it.
+
+```{r}
+# install.packages("palmerpenguins")
+library(palmerpenguins) 
+```
+
+Let's take a look at our data. We sometime call data frame 2-dimensional data because they have both rows and columns.
+
+```{r}
+penguins
+```
+
+### Functions
+
+As with vectors, there are many functions that are useful for taking a look at data frames. Many of the ones that work with vectors also work with data frames. Here are a few of the ones I find very helpful.
+
+```{r}
+head(penguins) # first 6 lines 
+head(penguins, 10) # can specify how many lines 
+tail(penguins) # last 6 lines 
+
+str(penguins) # structure 
+nrow(penguins) # number of rows
+ncol(penguins) # number of columns
+
+names(penguins) # same as colnames(penguins) in a df
+```
+
+### Sub-setting using Indexing
+
+When subsetting data frames, we need to now specify 2 locations, the row and the column. In R, it is always row *then* column. Note that this is typically the opposite of spreadsheets.
+
+```{r}
+# in vectors, only 1 dimension, so we only need to specify one location
+# data frames are 2-dimensional, so he have to specify 2 different locations
+
+penguins[1:10, c(2,3)] 
+penguins[1:10, ] 
+penguins[ , c(1:4)]
+```
+
+### Select individual columns
+
+Often, we want to select a specific column to perform calculations on or to plot. To do this, we use the `$` operator.
+
+```{r}
+penguins$species 
+
+# we can save single columns as vectors with the assignment operator
+flipper_lenght_mm <- penguins$flipper_length_mm
+```
+
+Let's plot a histogram with the flipper length data.
+
+```{r}
+# Plot a histogram
+hist(penguins$flipper_length_mm) # same as hist(flipper_length_mm)
+```
+
+We can also perform calculations on these vectors.
+
+```{r}
+mean(penguins$flipper_length_mm)
+sd(penguins$flipper_lenght_mm)
+
+# min, max, median, mode are other functions we might want to use
+```
+
+### Conditional Sub-setting
+
+As with vectors, we can use conditional formatting to select specific observations (typically rows).
+
+```{r}
+adelie <- penguins[penguins$species == 'Adelie', ] 
+adelie
+
+hist(adelie$flipper_length_mm)
+
+# dealing with numeric columns with NA values
+mean(adelie$flipper_length_mm)
+mean(adelie$flipper_length_mm, na.rm = TRUE)
+```
+
+We can also use conditional formatting to filter rows based on numeric conditions.
+
+```{r}
+# penguins with flippers greater than or equal to 200 mm
+flippers_200mm_min <- penguins[penguins$flipper_length_mm >= 200, ] 
+
+# create a histogram
+# hist(flippers_200mm_min) # why doesn't this work? We haven't specified a column 
+hist(flippers_200mm_min$flipper_length_mm)
+```
+
+### Group Challenge
+
+Write some lines of code to do the following: calculate the minimum and maximum body mass values for Gentoo penguins. Remember the `na.rm` argument!
+
+```{r}
+gentoo <- penguins[penguins$species == "Gentoo", ]
+min(gentoo$body_mass_g, na.rm = TRUE)
+max(gentoo$body_mass_g, na.rm = TRUE)
+
+hist(gentoo$body_mass_g)
+```

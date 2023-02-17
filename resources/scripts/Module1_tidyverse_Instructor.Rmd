@@ -1,0 +1,317 @@
+---
+title: "Introduction to the `tidyverse`"
+author: "Ellen Bledsoe"
+date: "2022-09-22"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 2-dimensional Data and the `tidyverse`
+
+## What is the `tidyverse`?
+
+Different programming languages have different syntax (language structure). The `tidyverse` is a package (more accurately, a set of packages) offered in R that all have similar goals and a unified syntax designed to work particularly well with 2-dimensional data.
+
+Until now, all of the coding we have done is in the original R language, which is often called "base R." The syntax in the `tidyverse` is often pretty different from base R. Both are useful, and many people often combine them, which is why we start with base R.
+
+Explore the tidyverse
+
+If you want to learn more about the `tidyverse`, head over to [www.tidyverse.org](www.tidyverse.org) and browse the site. Below is a brief summary of *some* of the packages I think you might find the most useful.
+
+-   `tidyr`: creating data that is consistent in form/shape
+
+-   `dplyr`: creating data that is clean, easily wrangled, and summarized
+
+-   `ggplot2`: publication-worthy plots using The Grammar of Graphics
+
+-   `tibble`: data frames but better!
+
+-   `readr`: fast and friendly ways to read data into R
+
+-   `stringr`: easy manipulation of strings (character data)
+
+-   `lubridate`: easy manipulation of time and date values
+
+More resources:
+
+-   [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
+    -   specifically the `dplyr` and `tidyr` cheat sheets, but there are many more!
+
+-   [Data Carpentry lesson](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
+
+-   [Effectively using the tidyverse](https://r4ds.had.co.nz/index.html)
+
+## Practice with the `tidyverse`
+
+### Set Up
+
+I have already set up these RStudio Cloud projects so that the `tidyverse` is installed. Each time we want to use the `tidyverse`, however, we need to "load" it into our workspace. We do this with the `library()` function.
+
+We are also going use the `penguins` dataset from the `palmerpenguin` package. We will need to load that package, as well.
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+When you load the `tidyverse` library, you'll see some "conflicts." Don't panic! That's normal. Those conflicts are telling us that certain functions in `dplyr` are now overriding some functions in base R with the same name.
+
+### Penguins
+
+Let's remind ourselves what the `penguins` dataset looks like.
+
+```{r}
+head(penguins)
+colnames(penguins)
+str(penguins)
+view(penguins)
+
+# glimpse() is from the dplyr package
+glimpse(penguins)
+```
+
+The `tidyverse` converts 2D data into something called a tibble! For our intents and purposes, it is basically the same as a data frame (and I'll probably call it a data frame, in reality).
+
+## Useful functions from `dplyr`
+
+`dplyr` is one of the most useful packages in the `tidyverse.` I use it pretty much every single time I code. If we break down the package name `dplyr`, we get d-ply-r. The "d" stands for data (and data frame), "ply" means to work with and push the data into a format with which we can work, and the "r" means that we are doing this in R.
+
+### `select()`ing columns
+
+Let's use our first function, `select()`. Select allows us to pick out specific columns from our data. You can use names or their position in the data frame.
+
+First, let's remind ourselves how we would accomplish this in base R.
+
+```{r}
+penguins[, 1:3]
+```
+
+The `select()` function does the same thing but with more power (and, in my opinion, more easily). The first argument in the function is the data frame. Any following arguments are the columns we want to select.
+
+```{r select_tidy}
+# first argument is the data frame, then the columns
+select(penguins, bill_length_mm)
+
+# multiple columns
+select(penguins, species, island, bill_length_mm)
+select(penguins, species:bill_length_mm)
+select(penguins, -island)
+```
+
+You might have noticed that we haven't put any column names in quotations, unlike what we did with selecting columns by name in base R. This is one quirk of the `tidyverse` to which you will need to pay special attention. We *usually* will not need to put column names in quotations.
+
+#### Let's practice!
+
+Write a line of code to select the columns with the following information from `penguins`: species, body mass, sex, and year.
+
+```{r}
+select(penguins, species, body_mass_g, sex, year)
+```
+
+### `filter()`ing rows
+
+`filter()` allows you filter rows by certain conditions. Recall that we did this a bit with base R.
+
+```{r filter_baseR}
+# base R
+penguins[penguins$island == "Torgersen", ]
+```
+
+The code above is, in my opinion, a bit unwieldy. Filter feels more intuitive. We still need the double equal signs, though!
+
+```{r filter_tidy}
+# filter
+filter(penguins, island == "Torgersen")
+
+# easy to write multiple conditions and to chain stuff together
+filter(penguins, island == "Torgersen" & year > 2008)
+
+# worth noting here that we haven't saved any of this. We need to write to a new object. 
+torg2008 <- filter(penguins, island == "Torgersen" & year >= 2008)
+```
+
+#### Let's practice using `select()` and `filter()`
+
+Using the `penguins` data frame, write a small set of code that does the following:
+
+1.  Slims down the full data frame to one that contains the species, bill length, and sex. Assign this to an object called `slim`.
+2.  Filters the data for only male penguins with bills greater than 20 mm in length.
+3.  Name this new data frame `male20`
+
+```{r}
+slim <- select(penguins, species, bill_length_mm, sex)
+male20 <- filter(slim, sex == "male", bill_length_mm > 20)
+```
+
+## The pipe `%>%`
+
+You can use the pipe operator to chain `tidyverse` functions together. You can think of the pipe as automatically sending the output from the first line (left side of the pipe) into the next line as the input (right side of the pipe).
+
+This is helpful for a lot of reasons, including:
+
+1.  removing the clutter of creating a lot of intermediate objects in your work space, which reduces the chance of errors caused by using the wrong input object
+2.  makes things more human-readable (in addition to computer-readable)
+
+The shortcut for the pipe is `Ctrl + Shift + M` (Windows) or `Cmd + Shift + M` (Mac).
+
+Let's recreate the `male20` dataframe that we created above; this time, however, we will use the pipe!
+
+```{r}
+male20 <- penguins %>% 
+  select(species, bill_length_mm, sex) %>% 
+  filter(sex == "male", bill_length_mm > 20)
+```
+
+### Group Challenge
+
+Using pipes, subset the `penguins` data to include only Adelie penguins from the year 2007. Your final data frame should only have the species, sex, and year columns.
+
+```{r}
+penguins %>% 
+  filter(species == "Adelie", year == 2007) %>% 
+  select(species, sex, year)
+```
+
+## More useful functions!
+
+### Creating new variables with `mutate()`
+
+Sometimes our data doesn't have our data in exactly the format we want. For example, we might want our temperature data in Fahrenheit instead of Celsius or our millimeter measurements in centimeters.
+
+The `tidyverse` has a function called `mutate()` that lets us create a new column. Often, we want to apply a function to the entire column or perform some type of calculation. The `mutate()` function allows us to do this.
+
+```{r}
+penguins %>% 
+  mutate(bill_length_cm = bill_length_mm / 10)
+
+# remember, we would have to create a new object to save this new column!
+```
+
+### Understanding data through `summarize()`
+
+Like we have talked about in previous classes, some of the best ways for us to understand our data is through what we call summary statistics such as the mean, standard deviation, minimums, maximums, etc.
+
+Fortunately, the `tidyverse` has a handy-dandy function to make this easy to do with data frames.
+
+```{r summarize}
+# first attempt at mean and sd of body mass
+penguins %>% 
+  summarise(mean_body_mass = mean(body_mass_g),
+            sd_body_mass = sd(body_mass_g))
+
+```
+
+Wait a second! Those are some weird values!
+
+It is important to note that if any of the values in the column that you are trying to summarize are missing, you might get some wonky values, like you did above. Fortunately, `mean()` and `sd()` and many other functions have an argument to remove the missing values: `na.rm = TRUE`
+
+```{r summarize_na.rm}
+penguins %>% 
+  summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE),
+            sd_body_mass = sd(body_mass_g, na.rm = TRUE))
+```
+
+## Split, Apply, Combine with `group_by()`
+
+One common way we analyze data is through something we call the "split, apply, combine" approach. This means that we:
+
+-   *split* data up into groups via some type of categorization
+-   *apply* some type of analysis to each group independently and
+-   *combine* the data back together
+
+The `group_by()` function lets us do this. It is most often used in combination with `mutate()` or `summarize()`.
+
+For example, we can use this method to calculate the mean body mass for males and females of each species instead of the overall mean of the entire dataset
+
+```{r group_by}
+penguins %>% 
+  group_by(species, sex) %>% 
+  summarise(mean_body_mass = mean(body_mass_g, na.rm = TRUE),
+            sd_body_mass = sd(body_mass_g, na.rm = TRUE))
+```
+
+### Let's practice!
+
+Practice using the combination of `group_by()` and `summarize()` to calculate the minimum (`min()`) and maximum (`max()`) average flipper length per island. Save this data frame as `flipper_min_max`
+
+```{r group_by_city}
+flipper_min_max <- penguins %>% 
+  group_by(island) %>% 
+  summarize(min_flipper = min(flipper_length_mm, na.rm = TRUE),
+            max_flipper = max(flipper_length_mm, na.rm = TRUE))
+flipper_min_max
+```
+
+Already accomplished this task? Try to figure out how you can keep the "species" column in the final data frame.
+
+```{r group_by_city_country}
+penguins %>% 
+  group_by(island, species) %>% 
+  summarize(min_flipper = min(flipper_length_mm, na.rm = TRUE),
+            max_flipper = max(flipper_length_mm, na.rm = TRUE))
+```
+
+## Making Plots with `ggplot2`
+
+One of my favorite parts of using the `tidyverse` is making plots with the `ggplot2` package. We aren't going to delve into how this works too much right now because we don't end up making too many plots in this course, but I wanted to include some code for making a histogram to give you an idea of how this works.
+
+```{r message = FALSE, warning = FALSE}
+ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram()
+```
+
+Here's what is happening in the code above.
+
+-   `ggplot()` is the function to make a plot
+-   after telling the function what data to use (`penguins`), we need to tell the function the "mappings", or which variables (columns) should be associated with which axes or other elements of the plot. Here, I've assigned the "flipper_length_mm" column to the x-axis. When plotting a histogram, `ggplot()` automatically knows that the y-axis will be frequency, so we do not need to specify
+-   we use the `+` symbol to add a new "layer" to the plot
+-   here, I've added a histogram layer with the `geom_histogram()` function, telling `ggplot2` to make a histogram plot
+
+This is definitely more complicated than making a basic histogram in base R, so why is it so great? Well, with just a few modifications, you can make beautiful, multi-layered plots that would be much more complicated to produce in base R. For example, check out resulting plot from the code below.
+
+```{r message = FALSE, warning = FALSE}
+ggplot(penguins, aes(flipper_length_mm, fill = species)) +
+  geom_histogram(position = "identity", alpha = 0.75) +
+  facet_wrap( ~ island) + 
+  theme_bw()
+```
+
+## A few other things to know
+
+Below, I'm including some additional functions that you might find helpful! You *will NOT* be tested on these functions below, but they often come in handy, and we might use them down the road.
+
+1.  We can use the `is.na()` function to filter out `NA` values. The `!` tells R to do the opposite of what we've asked. Therefore, the code below effectively says the following:
+
+-   ask if each value in the sex column is an `NA` value or not and return a string of TRUE and FALSE
+
+-   instead of filtering out the TRUE values (meaning we would get all rows in which the value in the sex column *is* `NA`, adding the `!` symbol tells the filter function to pull all the FALSE values, meaning we pull all the rows in which the value in the sex column *is not* `NA`.
+
+```{r}
+penguins %>% 
+  filter(!is.na(sex))
+```
+
+2.  The `arrange()` functions lets us order our rows alphabetically or numerically.
+
+```{r}
+penguins %>% 
+  arrange(body_mass_g)
+```
+
+3.  `count()` let's us find out how many observations we have.
+
+```{r}
+penguins %>% 
+  count(species, sex)
+```
+
+4.  Finally, `distinct()` allows us to find all the unique values in a column. This is usually best for categorical (character) columns.
+
+```{r}
+penguins %>% 
+  distinct(species)
+```

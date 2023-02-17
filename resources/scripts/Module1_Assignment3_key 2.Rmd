@@ -1,0 +1,183 @@
+---
+title: "Module 1, Assignment 3"
+author: ""            # <- your name here!
+date: '2023-02-13'    # <- you can change the date if you want
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Assignment Details
+
+### Purpose
+
+The goal of this assignment is to use and become comfortable with working with 2-dimensional data using the `tidyverse`.
+
+### Task
+
+Write R code to successfully answer each question below or write text to successfully answer the question.
+
+### Criteria for Success
+
+-   Code is within the provided code chunks
+-   Code chunks run without errors
+-   Code produces the correct result
+    -   Code attempts will get half points
+    -   Code that produces the correct answer will receive full points
+-   Text answers correctly address the question asked
+
+### Due Date
+
+February 20 at midnight MST
+
+# Assignment Questions
+
+All questions are worth 1 point unless otherwise specified.
+
+If you create an object in a question, please type the name of the object in the next line so it will print out when you save your file as a PDF. For example:
+
+```{r eval=FALSE}
+# this doesn't actually run--it's just an example
+new_object <- dataframe[row, column]
+new_object
+```
+
+## Definitions
+
+*In your own words*, define/describe the following terms. These don't need to be technical descriptions but rather how you are thinking about them.
+
+1.  *data frame/tibble*: 2D data (rows and columns)
+
+2.  *R package*: group of pre-written function/code chunks/data that we can use in R
+
+3.  *tidyverse*: package of packages with more-intuitive syntax for humans
+
+4.  *the pipe (`%>%`)*: an operator that connects one line of (left-side) to the next (right-side). It sends the results of the first line through to the next.
+
+## Using the `tidyverse`
+
+For the rest of the assignment, you will be writing or interpreting code from the `tidyverse` using the merged cactus pad data (the same as Assignment 2).
+
+5.  Load the `tidyverse` package into RStudio.
+
+```{r}
+library(tidyverse)
+```
+
+### *Important!*
+
+Make sure you run the following code chunk in order to read in the cactus pads data set that we will be using for this assignment.
+
+```{r}
+pads <- read_csv("../data_raw/CactusPads_joined.csv")
+pads
+```
+
+6.  There are many different functions we can use to look at our data set. Choose your favorite to get an idea of all the data in `pads`.
+
+```{r}
+str(pads)
+# head(pads)
+# names(pads)
+# whatever they choose
+```
+
+7.  Which of the columns in `pads` are data class "character"? List the columns below.
+
+    *Answer: spines, insects, damage, location, species, size*
+
+8.  Make a data frame from `pads` that has the columns with dimensions (length, width, depth) of the cactus pads and the species. (Hint: make sure you are typing the correct column names!)
+
+```{r}
+pads %>% 
+  select(length_in, width_in, depth_in, species)
+# OR select(pads, length_in, width_in, depth_in, species)
+```
+
+9.  Make a data frame from `pads` that only includes paddles with a depth that is greater that 1 in.
+
+```{r}
+pads %>% 
+  filter(depth_in > 1)
+# OR filter(pads, depth_in > 1)
+```
+
+10. Run the lines of code below. Describe what each of the three lines are doing (3 points).
+
+```{r}
+large_no_spines <- pads %>% 
+  filter(spines == "N", size == "Large") %>% 
+  select(group_id, paddle_id, spines, size, species)
+```
+
+*Line 1*: creates a new dataframe called large_no_spines and starts with the pads dataframe, which is piped to line 2\
+*Line 2*: chooses rows based on conditions (only cactus pads with no spies and cactuses that were large) and pipes that through to the next line\
+*Line 3*: selects 5 columns from the resulting dataframe (group_id, paddle_id, spines, size, species)
+
+11. Let's convert the length column to centimeters. Create a new column named `length_cm` which has the length of each cactus pad in centimeters. (Hint: there are 2.54 cm per inch).
+
+    Use the pipe (`%>%`) and the `select()` function to show the `length_in` and `length_cm` columns side by side. (Hint: order matters here! You can't select a column that doesn't yet exist...).
+
+```{r}
+mutate(pads, length_cm = length_in * 2.54) %>% 
+  select(length_in, length_cm)
+```
+
+12. Use the `summarize()` function to calculate the mean (`mean()`) and standard deviation (`sd()`) of the cactus pad widths (in inches).
+
+```{r}
+pads %>% 
+  summarise(mean_width = mean(width_in),
+            sd_width = sd(width_in))
+```
+
+13. Create a new data frame with a new column called "volume_in3" that has the volume of each cactus pad (Hint: volume = length \* width \* depth). Save this data frame by naming it `pads_volume`.
+
+```{r}
+pads_volume <- pads %>% 
+  mutate(volume_in3 = length_in * width_in * depth_in)
+pads_volume
+```
+
+14. Using the `pads_volume` dataframe that you just created, calculate the mean and standard deviation of the cactus pad volumes for *each* species of cactus. (2 points)
+
+```{r}
+pads_volume %>% 
+  group_by(species) %>% 
+  summarize(mean_volume = mean(volume_in3),
+           sd_volume = sd(volume_in3))
+```
+
+16. Calculate the coefficient of variation for *each* species for the volume of the cactus pads. (3 points)
+
+    This question has a lot of steps, so think through each one individually before trying to write the code.
+
+    -   which function will you need to get values for *each* species?
+    -   what is the equation for CV?
+    -   how will you calculate the necessary values for the CV? (Hint: see question above)
+    -   what function will you use to create a new column for the CV?
+
+```{r}
+pads_volume %>% 
+  group_by(species) %>% 
+  summarize(mean_volume = mean(volume_in3),
+           sd_volume = sd(volume_in3)) %>% 
+  mutate(CV = sd_volume / mean_volume * 100)
+```
+
+Which cactus species has the highest relative variation in cactus pad volume?
+
+*Answer:* *Opuntia santa-rita*
+
+# Turning in Your Assignment
+
+Follow these steps to successfully turn in your assignment on D2L.
+
+1.  Click the `Knit` button up near the top of this document. This should produce a PDF file that shows up in the `Files` panel on the bottom-right of your screen.
+    -   if this doesn't work, that's ok! just follow the same steps with the .Rmd file
+2.  Click the empty box to the left of the PDF file.
+3.  Click on the blue gear near the top of the `Files` panel and choose Export.
+4.  Put your last name at the front of the file name when prompted, then click the Download button. The PDF file of your assignment is now in your "Downloads" folder on your device.
+5.  Head over to D2L and navigate to Module 1 Assignment 2. Submit the PDF file that you just downloaded.
