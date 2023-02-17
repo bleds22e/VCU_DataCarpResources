@@ -32,6 +32,8 @@ This is a word-vomit-style document to contain information and thoughts about co
 * `dplyr` 
   * Filter, select
   * Mutate, group_by, summarize
+  
+### Intermediate `tidyverse`
 * `tidyr`
   * Separate/unite
   * Pivot wider/pivot longer
