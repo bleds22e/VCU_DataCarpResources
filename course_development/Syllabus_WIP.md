@@ -39,34 +39,50 @@ designed data visualizations.
 
 By the end of this course, you will be able to do the following:
 
-- Apply best practices with spreadsheets to reduce potential data entry
-  errors
-- 
-- Create a computationally reproducible research project
-
-Create well-structured databases Extract information from databases
-Write simple computer programs in R to analyze data and create
-visualizations Apply these tools to answer ecological and environmental
-questions using publicly available datasets
+- Apply best practices with **spreadsheets** to reduce potential data
+  entry errors
+- Execute **R code** to extract information from 1- and 2-dimensional
+  data
+- Communicate information effectively through **data visualizations**
+- Implement skills to produce **tidy data** and combine **relational
+  datasets**
+- Use **iteration** in code for repetitive tasks
+- Create a **computationally reproducible** research project
 
 ## Modular Structure
 
-This course is developed
+This course is developed as a modular course, designed to be flexible in
+terms of scheduling and order. While some basic concepts of coding in R
+are required for the final 3 modules, all modules are designed to be
+effectively stand-alone modules that can be moved around, shortened or
+expanding, and generally adapted as desired.
 
 ### Module 1: Data, Data, Everywhere
 
-#### Week 1
+#### Week 1: What is data? How do we talk about data?
 
-#### Week 2
+- Types of data (categorical vs. continuous, qualitative
+  vs. qualitative, numeric vs. non-numeric)
+- What is data science, and why is it important?
+- What is open science, and why is it important?
+- What is computational reproducibility?
 
-Structuring Data in Spreadsheets
+Example Resources:
 
-- “Tidy” data
+- 02_DataScience.pptx
+- 03_RStudio.pptx
+- 06_DataMeetComputer.pptx
+
+#### Week 2: Structuring Data in Spreadsheets
+
+- Best practices for using spreadsheets
 - Making data human- and computer-readable
 
-#### Week 3
+Example Resources:
 
-Data Entry and QA/QC in Spreadsheets
+- Lab3_Spreadsheets.pptx
+
+#### Week 3: Data Entry and QA/QC in Spreadsheets
 
 - Data Validation for Quality Assurance and Control (QA/QC)
 - Using “Filter” and “Sort” responsibly for data cleaning
@@ -74,61 +90,132 @@ Data Entry and QA/QC in Spreadsheets
 
 ### Module 2: Welcome to R World
 
-#### Week 4
+#### Week 4: Intro to R/RStudio
 
-Intro to R/RStudio
+- What is R? How is it different from RStudio?
+- File paths and good file structure
+- Working directories and RProjects
 
-#### Week 5
+Example lesson(s):
 
-Intro to Coding in base R
+- [Intro to
+  RStudio](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_1_IntrotoRStudio_Instructor.Rmd)
+- 03_RStudio.pptx
+- 07_IntrotoRandRStudio.pptx
 
-#### Week 6
+#### Week 5: Intro to Coding in base R
 
-Intro to the `tidyverse`
+- Object-oriented language
+- Data classes in R and why they matter
+- Working with 1-dimensional data (vectors)
+- Functions, arguments, and how they work
+- Working with 2-dimensional data (data frames)
+
+Example lesson(s):
+
+- [Intro to Coding .Rmd from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_2_IntrotoCoding_Instructor.Rmd)
+- [Intro to Coding .Rmd from RNR
+  321](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_IntrotoCoding_Instructor.Rmd)
+
+#### Week 6: Intro to the `tidyverse`
+
+- `tidyverse` syntax
+- `filter()` and `select()`
+- the pipe
+- `group_by()`, `summarize()`, and `mutate()`
+
+Example lesson(s):
+
+- [Intro to `tidyverse` from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_3_tidyverse_Instructor.Rmd)
+- [Intro to `tidyverse` from RNR
+  321](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_tidyverse_Instructor.Rmd)
 
 ### Module 3: Data Visualization
 
-#### Week 7
+#### Week 7: Descriptive Statistics & Data Visualization
 
-Descriptive Statistics & Data Viz
-
-- measures of central tendancy, measures of dispersion
+- measures of central tendency, measures of dispersion
 - principles of effective data visualization
 - types of data visualization and when to use them
 
-#### Week 8
+Example lesson(s):
 
-`ggplot2`: making the types of plots we talked about the week before
+- 05_DescriptiveStats.pptx
+- [Data Viz intro from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
 
-- structure of a ggplot
-- geoms
-- themes
+#### Week 8: Plotting with `ggplot2`
 
-#### Week 9
+- making the types of plots we talked about the week before
+- structure of a ggplot (geoms, themes)
 
-Fancy `ggplot2`: color, fill, labels, alpha, facets, multiple layers,
-etc.
+Example lesson(s):
+
+- [Intro to `ggplot2` from DITW Fall
+  2022](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_1_LeopardSeals_Instructor.Rmd)
+- [Intro to `ggplot2` from DITW Spring
+  2023](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_2_ggplot2_Instructor.Rmd)
+- [Data Viz Intro from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
+
+#### Week 9: Customizing Plots with `ggplot2`
+
+- How does `aes()` really work (e.g., color, fill, etc.)?
+- Faceting
+- Adding multiple layers
+- Writing better axes labels
+
+Example lesson(s):
+
+- [Data Viz Intro from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
 
 ### Module 4: Data W(R)angling and (R)elational Data
 
-#### Week 10
+#### Week 10: Making Un-tidy Data Tidy with `tidyr`
 
-#### Week 11
+- Often we are working with data from other people that is messy
+- Long vs. wide data (`pivot_wider` and `pivot_longer`)
+- Dealing with missing data
+- `separate()` and `unite()`
 
-#### Week 12
+#### Week 11: Working with the nitty-gritty
+
+- `stringr`
+- `lubridate`
+
+#### Week 12: Joining Related Data
+
+- primary keys, relational databases
+- `dplyr` joins
 
 ### Module 5: Becoming Computationally (L)Iterate
 
-#### Week 13
+#### Week 13: Iteration
 
-For Loops
+- For Loops
+- If_else statements (and case_when for multiple options)
 
-#### Week 14
+Example lesson(s):
 
-Functions
+- [for loop and if_else examples from
+  DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_3_SickFish_Instructor.Rmd)
 
-#### Week 15
+#### Week 14: Building Functions
 
-`purrr`
+- The power of writing your own functions
 
-## Assessment
+Example lesson(s): - [Building function from
+DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_2_Functions_Instructor.Rmd)
+
+#### Week 15: Iterating with `purrr`
+
+## Assessments
+
+- weekly homework and in-class review
+- weekly assignments
+- discussions (?), reflections due at end of module
+- quizzes?
+- project steps–one each module
