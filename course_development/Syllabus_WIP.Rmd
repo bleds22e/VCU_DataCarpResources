@@ -45,10 +45,20 @@ This course is developed as a modular course, designed to be flexible in terms o
 -   What is open science, and why is it important?
 -   What is computational reproducibility?
 
+Example Resources:
+
+-   02_DataScience.pptx
+-   03_RStudio.pptx
+-   06_DataMeetComputer.pptx
+
 #### Week 2: Structuring Data in Spreadsheets
 
 -   Best practices for using spreadsheets
 -   Making data human- and computer-readable
+
+Example Resources:
+
+-   Lab3_Spreadsheets.pptx
 
 #### Week 3: Data Entry and QA/QC in Spreadsheets
 
@@ -67,7 +77,8 @@ This course is developed as a modular course, designed to be flexible in terms o
 Example lesson(s):
 
 -   [Intro to RStudio](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_1_IntrotoRStudio_Instructor.Rmd)
-- 
+-   03_RStudio.pptx
+-   07_IntrotoRandRStudio.pptx
 
 #### Week 5: Intro to Coding in base R
 
@@ -80,6 +91,7 @@ Example lesson(s):
 Example lesson(s):
 
 -   [Intro to Coding .Rmd from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_2_IntrotoCoding_Instructor.Rmd)
+-   [Intro to Coding .Rmd from RNR 321](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_IntrotoCoding_Instructor.Rmd)
 
 #### Week 6: Intro to the `tidyverse`
 
@@ -88,9 +100,10 @@ Example lesson(s):
 -   the pipe
 -   `group_by()`, `summarize()`, and `mutate()`
 
-Example lesson(s): 
+Example lesson(s):
 
--   
+-   [Intro to `tidyverse` from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_3_tidyverse_Instructor.Rmd)
+-   [Intro to `tidyverse` from RNR 321](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module1_tidyverse_Instructor.Rmd)
 
 ### Module 3: Data Visualization
 
@@ -102,6 +115,9 @@ Example lesson(s):
 
 Example lesson(s):
 
+-   05_DescriptiveStats.pptx
+-   [Data Viz intro from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
+
 #### Week 8: Plotting with `ggplot2`
 
 -   making the types of plots we talked about the week before
@@ -109,12 +125,20 @@ Example lesson(s):
 
 Example lesson(s):
 
+-   [Intro to `ggplot2` from DITW Fall 2022](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_1_LeopardSeals_Instructor.Rmd)
+-   [Intro to `ggplot2` from DITW Spring 2023](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_2_ggplot2_Instructor.Rmd)
+-   [Data Viz Intro from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
+
 #### Week 9: Customizing Plots with `ggplot2`
 
 -   How does `aes()` really work (e.g., color, fill, etc.)?
 -   Faceting
--   Adding multiple layers 
+-   Adding multiple layers
 -   Writing better axes labels
+
+Example lesson(s):
+
+-   [Data Viz Intro from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module3_2_DataViz_Instructor.Rmd)
 
 ### Module 4: Data W(R)angling and (R)elational Data
 
@@ -127,8 +151,8 @@ Example lesson(s):
 
 #### Week 11: Working with the nitty-gritty
 
-- `stringr`
-- `lubridate`
+-   `stringr`
+-   `lubridate`
 
 #### Week 12: Joining Related Data
 
@@ -142,9 +166,17 @@ Example lesson(s):
 -   For Loops
 -   If_else statements (and case_when for multiple options)
 
+Example lesson(s):
+
+- [for loop and if_else examples from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_3_SickFish_Instructor.Rmd)
+
 #### Week 14
 
 -   How to write your own functions
+
+Example lesson(s):
+-   [Building function from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_2_Functions_Instructor.Rmd)
+
 
 #### Week 15
 
@@ -152,8 +184,8 @@ Example lesson(s):
 
 ## Assessments
 
-- weekly homework and in-class review
-- weekly assignments
-- discussions (?), reflections due at end of module
-- quizzes?
-- project steps--one each module
+-   weekly homework and in-class review
+-   weekly assignments
+-   discussions (?), reflections due at end of module
+-   quizzes?
+-   project steps--one each module
