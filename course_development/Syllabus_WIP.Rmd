@@ -161,7 +161,7 @@ Example lesson(s):
 
 ### Module 5: Becoming Computationally (L)Iterate
 
-#### Week 13
+#### Week 13: Iteration
 
 -   For Loops
 -   If_else statements (and case_when for multiple options)
@@ -170,17 +170,15 @@ Example lesson(s):
 
 - [for loop and if_else examples from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_3_SickFish_Instructor.Rmd)
 
-#### Week 14
+#### Week 14: Building Functions
 
--   How to write your own functions
+-   The power of writing your own functions
 
 Example lesson(s):
 -   [Building function from DITW](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/scripts/Module2_2_Functions_Instructor.Rmd)
 
 
-#### Week 15
-
--   iterating with `purrr`
+#### Week 15: Iterating with `purrr`
 
 ## Assessments
 
