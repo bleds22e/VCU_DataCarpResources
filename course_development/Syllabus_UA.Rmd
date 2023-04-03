@@ -152,7 +152,7 @@ Implement skills to produce **tidy data** and combine **relational datasets.**
 
 Use **iteration** in code for repetitive tasks.
 
-#### Week 13: Iteration
+#### Week 13: Iteration and Making Choices
 
 -   For Loops
 -   If/else statements (and `case_when()` for multiple options)
