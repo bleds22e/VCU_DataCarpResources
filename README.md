@@ -14,6 +14,8 @@ A [document](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/course_
 
 ## Resources folder
 
+The Resources folder has a ReadMe-style [document](https://github.com/bleds22e/VCU_DataCarpResources/blob/main/resources/resources_compilation.md) with links to numerous resources.
+
 ### data_raw
 Data files for compiled scripts
 
