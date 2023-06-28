@@ -75,7 +75,7 @@ output: github_document
 -   [`rdataretriever`](https://github.com/ropensci/rdataretriever)
 -   [`portalr`](https://weecology.github.io/portalr/)
     -   [`ratdat`](https://github.com/weecology/ratdat), the Portal teaching data set
-    -   specific `ratdat` datasets for cleaning found [here](https://www.michaelc-m.com/Rewrite-R-ecology-lesson/)
+    -   specific `ratdat` datasets for cleaning found [here](https://www.michaelc-m.com/Rewrite-R-ecology-lesson/04-putting-it-together.html)
 -   [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/)
 -   [`traitdata`](https://rdrr.io/github/RS-eco/traitdata/)
 -   [`fortedata`](https://fortexperiment.github.io/fortedata/)

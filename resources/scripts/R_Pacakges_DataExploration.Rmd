@@ -1,0 +1,110 @@
+---
+title: "Data Exploration"
+author: "Ellen Bledsoe"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+library(tidyverse)
+```
+
+# Exploring Datasets from R Packages
+
+## `lterdatasampler`
+
+Package [website](https://lter.github.io/lterdatasampler/)
+
+Install and load the package
+
+```{r}
+#install.packages("remotes")
+#remotes::install_github("lter/lterdatasampler")
+library(lterdatasampler)
+```
+
+### LUQ Stream Chemistry
+
+Check out stream chemistry data from the package
+
+-   dates to modify (good shape, though)
+-   temperatures to mutate
+
+```{r}
+luq_streamchem <- luq_streamchem
+glimpse(luq_streamchem)
+```
+
+Raw data download and prep
+
+```{r}
+#install.packages("metajam")
+#install.packages("janitor")
+library(lubridate)
+library(usethis)
+library(metajam)
+library(janitor)
+
+luq_url <- "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-luq.20.4923053&entityid=a05bda0a0af888cc037ff5dd00dafd7e"
+stream_chem_path <- download_d1_data(data_url = luq_url, path = tempdir())
+
+# Read that data
+# View(stream_chem$attribute_metadata)
+# -9999 is stated a no value in the metadata
+stream_chem <- read_d1_files(stream_chem_path)
+luq_stream_chem_data <- stream_chem$data
+
+# Filter from 1987 to 1992
+luq_streamchem <- luq_stream_chem_data %>%
+  filter(year(Sample_Date) > 1986 & year(Sample_Date) < 1993) %>% 
+    # "year" is a lubridate function that selects the year from a date column
+  select(-Sample_Time, -ends_with("Code")) %>% # remove unwanted columns
+  clean_names() #janitor
+```
+
+### Bison at Konza
+
+-   "data_code" and "animal code" for `separate()` and `unify()`
+-   weight to mutate
+-   year, month, day column unify and turn into dates
+
+```{r}
+knz_bison <- knz_bison
+glimpse(knz_bison)
+```
+
+### North Temperate Lakes Ice Cover
+
+-   good for group by, summarize, and joins
+
+```{r}
+
+```
+
+## `metajam` package
+
+The `metajam` package lets us download data from DataONE. This includes both data and metadata.
+
+-   `download_d1_data()`
+-   `read_d1_files()`
+
+## `ratdat`
+
+```{r}
+#install.packages("ratdat")
+library(ratdat)
+
+# data
+head(ratdat::complete)
+head(ratdat::surveys)
+```
+
+## USDA Nutrients data
+
+Old package from Hadley Wickham. No functions, just a bunch of dataframe that can be joined together in various ways.
+
+```{r}
+#remotes::install_github("hadley/usdanutrients")
+library(usdanutrients)
+```
