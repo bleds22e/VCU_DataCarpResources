@@ -64,10 +64,13 @@ Apply best practices with **spreadsheets** to reduce potential data entry errors
 
 -   Best practices for using spreadsheets
 -   Making data human- and computer-readable
+-   Plotting in spreadsheets
+-   Reproducibility
 
 #### Week 3: Data Entry and QA/QC in Spreadsheets
 
 -   Data Validation for Quality Assurance and Control (QA/QC)
+    -   Adding data breaks a data viz moment
 -   Using "Filter" and "Sort" responsibly for data cleaning
 -   Double-entry for catching data entry errors
 
@@ -79,6 +82,9 @@ Execute **R code** to extract information from 1- and 2-dimensional data.
 
 #### Week 4: Intro to R/RStudio
 
+-   Intro to coding languages
+    -   importance of reproducibility
+    -   the importance of coding when using "big data"
 -   What is R? How is it different from RStudio?
 -   File paths and good file structure
 -   Working directories and RProjects
@@ -95,7 +101,7 @@ Execute **R code** to extract information from 1- and 2-dimensional data.
 
 -   `tidyverse` syntax
 -   `filter()` and `select()`
--   the pipe
+-   the pipe: `%>%`
 -   `group_by()`, `summarize()`, and `mutate()`
 
 ### Module 3: Data Visualization
@@ -152,16 +158,14 @@ Use **iteration** in code for repetitive tasks.
 
 #### Week 13: Iteration
 
--   For Loops
 -   If/else statements (and `case_when()` for multiple options)
+-   For Loops
 
 #### Week 14: Building Functions
 
 -   The power of writing your own functions
 
-#### Week 15: Iterating with `purrr`
-
--   Alternatively, an open week to wrap up projects
+#### Week 15: Wrap-Up
 
 ## Assessments
 
@@ -202,3 +206,5 @@ In lieu of a final exam in the course, there is a final project. In the final pr
 Throughout the semester, you will submit a final project proposal (10 points, graded for completion), a final project data visualization draft (10 points, graded for completion) and a final project draft (25 points, graded for completion) to get feedback along the way.
 
 The final version of your final project should incorporate the feedback you've received throughout the semester on your proposal, data visualization, and draft. It will be worth 50 points.
+
+## 
