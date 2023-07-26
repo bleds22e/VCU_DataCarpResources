@@ -65,9 +65,9 @@ luq_streamchem <- luq_stream_chem_data %>%
 
 ### Bison at Konza
 
--   "data_code" and "animal code" for `separate()` and `unify()`
+-   "data_code" and "animal code" for `separate()` and `unite()`
 -   weight to mutate
--   year, month, day column unify and turn into dates
+-   year, month, day column unite and turn into dates
 
 ```{r}
 knz_bison <- knz_bison
