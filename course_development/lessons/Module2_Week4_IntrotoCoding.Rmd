@@ -3,6 +3,9 @@ title: "Introduction to Coding"
 author: "Ellen Bledsoe"
 date: "`r Sys.Date()`"
 output: github_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
@@ -56,7 +59,8 @@ density <- yucca/acres  # divide
 
 ## 1-Dimensional Data: Vectors
 
-We can also assigngroups of elements of the same type to a particular object. This is a core data structure in R.
+We can also assigngroups of elements of the same type to a particular
+object. This is a core data structure in R.
 
 ```{r}
 mass_kg <- c(4.50, 0.34, 0.02, 1.50)
@@ -76,7 +80,8 @@ There are a few main types in R, and they behave differently.
     -   double (decimals allowed---interchangeable with numeric)
 -   character (letters or mixture)
 -   logical (True or False; T or F)
--   factors (best used for data that need to be in a specific order; levels indicate the order)
+-   factors (best used for data that need to be in a specific order;
+    levels indicate the order)
 
 ```{r}
 # Examples of different data classes
@@ -116,7 +121,9 @@ Functions are pre-written bits of codes that perform specific tasks for
 us.
 
 Functions are always followed by parentheses. Anything you type into the
-parentheses are called arguments. Arguments are how we provide the function with bits of informationthe specifics that we give the function about 
+parentheses are called arguments. Arguments are how we provide the
+function with bits of informationthe specifics that we give the function
+about
 
 ```{r}
 ## Functions
@@ -183,12 +190,14 @@ Data frames are made up of multiple vectors. Each vector becomes a
 column.
 
 TODO convert to different example. Add T/F mammal column.
+
 ```{r}
 # Create a simple data frame
-plants <- data.frame(height = c(55, 17, 42, 47, 68, 39),
-                     nitrogen = c("Y", "N", "N", "Y", "Y", "N"))
+animals <- data.frame(animal_name = c("penguin", "cat", "lizard", "bat", "mouse", "trout"),
+                      mass_kg = c(4.2, 4.5, 0.01, 0.04, 0.05, 2.5),
+                      mammal = c(FALSE, TRUE, FALSE, TRUE, TRUE, FALSE))
 
-plants
+animals
 ```
 
 ### Sub-setting Data Frames
@@ -203,11 +212,11 @@ R always takes information for the row first, then the column.
 # Sub-setting data frames
 # 2-dimensional, so you need to specify row and then column
 # plants[3] # doesn't work
-plants[4,1]
-plants[,2]
+animals[4,1]
+animals[,2]
 
 # We can also choose specific columns using `$`
-plants$height
+animals$mass_kg
 
 ```
 
@@ -215,14 +224,14 @@ plants$height
 
 This is a simple data set, but let's come up with some questions.
 
-Example: height of plants treated with nitrogen vs. those not treated.
+Example: Average mass of mammals in the list
 
 ```{r}
 # Example: height of plants treated with nitrogen vs. those not treated. 
 
 # filter rows based on values in the nitrogen column
-plants[plants$nitrogen == "Y", ]
-mean(plants[plants$nitrogen == "Y", 1])
+animals[animals$mammal == TRUE, ]
+mean(animals[animals$mammal == TRUE, 2])
 ```
 
 ### Group Challenge (5 min)
@@ -234,8 +243,8 @@ treated with nitrogen and those not treated with nitrogen. Which group
 has the larger standard deviation?
 
 ```{r}
-sd(plants[plants$nitrogen == "Y", 1])
-sd(plants[plants$nitrogen == "N", 1])
+sd(animals[animals$mammal == "Y", 2])
+sd(animals[animals$mammal == "N", 2])
 ```
 
 Come up with a definition of standard deviation (Google is your
@@ -269,4 +278,5 @@ nrow(plants)  # number of rows
 names(plants) # list of column or object names
 ```
 
-TODO add in breaks for working on the assignment. Also add some more practice?
+TODO add in breaks for working on the assignment. Also add some more
+practice?
