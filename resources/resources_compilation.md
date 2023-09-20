@@ -102,8 +102,12 @@ Ellen Bledsoe
     Air](https://www.londonair.org.uk/london/asp/datadownload.asp),
     especially for [data
     cleaning](https://makingnoiseandhearingthings.com/2018/04/19/datasets-for-data-cleaning-practice/)
-  - [Datasets](https://github.com/datacarpentry/semester-biology/tree/main/data)
+- [Datasets](https://github.com/datacarpentry/semester-biology/tree/main/data)
     from the Weecology semester DC course
+- [EPA FLIGHT Tool](https://ghgdata.epa.gov/ghgp/main.do#/facility/) for GHG Emissions. Can filter by sector, state, year, etc. Clean-ish but messy aspects to fix.
+- [Climate Trace](https://climatetrace.org/downloads) has country-level and sector-level emissions around the globe
+- Declines of insects and birds in Denmark [data](https://datadryad.org/stash/dataset/doi:10.5061/dryad.gq73493)
+- US Wilderness [data](https://wilderness.net/practitioners/wilderness-areas/search.php#resultsSection)
 
 #### Data Packages
 
