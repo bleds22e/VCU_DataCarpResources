@@ -108,6 +108,7 @@ Ellen Bledsoe
 - [Climate Trace](https://climatetrace.org/downloads) has country-level and sector-level emissions around the globe
 - Declines of insects and birds in Denmark [data](https://datadryad.org/stash/dataset/doi:10.5061/dryad.gq73493)
 - US Wilderness [data](https://wilderness.net/practitioners/wilderness-areas/search.php#resultsSection)
+- Animal Traits [database](https://animaltraits.org/)
 
 #### Data Packages
 
