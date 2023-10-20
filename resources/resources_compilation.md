@@ -102,6 +102,7 @@ Ellen Bledsoe
     Air](https://www.londonair.org.uk/london/asp/datadownload.asp),
     especially for [data
     cleaning](https://makingnoiseandhearingthings.com/2018/04/19/datasets-for-data-cleaning-practice/)
+  - [National Parks Biodiversity](https://www.kaggle.com/datasets/nationalparkservice/park-biodiversity?select=species.csv), good for joins
 - [Datasets](https://github.com/datacarpentry/semester-biology/tree/main/data)
     from the Weecology semester DC course
 - [EPA FLIGHT Tool](https://ghgdata.epa.gov/ghgp/main.do#/facility/) for GHG Emissions. Can filter by sector, state, year, etc. Clean-ish but messy aspects to fix.
